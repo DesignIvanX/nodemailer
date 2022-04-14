@@ -3,19 +3,19 @@ const router = require("./router/router");
 const cors = require("cors");
 const morgan = require("morgan");
 const path = require("path");
-const corsOptions = {
-  origin: "https://ivandcdesign.vercel.app/",
-  optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: "https://ivandcdesign.vercel.app/",
+//   optionsSuccessStatus: 200,
+// };
 // App
 const app = express();
 // Config
 app.set("PORT", process.env.PORT || "3001");
 // Middlewares
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan("dev"));
-app.use(cors(corsOptions));
 // Static
 app.use(express.static(path.join(__dirname, "public")));
 // Router
