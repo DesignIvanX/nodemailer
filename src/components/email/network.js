@@ -38,8 +38,14 @@ router.post("/", (req, res) => {
     };
     transporter
       .sendMail(emailOptions)
-      .then((data) => response.success(req, res, data, 200))
-      .catch((err) => response.error(req, res, err, 500, "Error"));
+      .then((data) => {
+        console.log(data);
+        response.success(req, res, data, 200);
+      })
+      .catch((err) => {
+        console.log(err);
+        response.error(req, res, err, 500, "Error");
+      });
   });
 });
 
