@@ -3,7 +3,11 @@ const nodemailer = require("nodemailer");
 const response = require("../../network/response");
 
 const router = express.Router();
-
+router.get("/", (req, res) => {
+  res.json({
+    body: "",
+  });
+});
 router.post("/", (req, res) => {
   nodemailer.createTestAccount((err, account) => {
     const htmlEmail = `
