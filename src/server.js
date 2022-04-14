@@ -4,7 +4,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const path = require("path");
 const corsOptions = {
-  origin: "https://ivandcdesign.vercel.app/",
+  origin: "https://ivandcdesign.vercel.app/contact",
   optionsSuccessStatus: 200,
 };
 // App
